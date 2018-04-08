@@ -1,14 +1,17 @@
 set nocompatible              " required
 filetype off                  " required
+
 "
 "
 " Plugins
 "
 "
 "
+
 call plug#begin('~/.vim/plugged')
 
 " Utils
+Plug 'skywind3000/asyncrun.vim'
 Plug 'tmhedberg/simpylfold'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
@@ -21,6 +24,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
+
+" React
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+Plug 'mattn/emmet-vim'
 
 " Themes & Customization
 Plug 'vim-airline/vim-airline'
@@ -39,6 +48,7 @@ call plug#end()
 "
 "
 "
+
 filetype plugin indent on    " required
 set encoding=utf-8
 syntax on
@@ -71,13 +81,28 @@ let g:SimpylFold_docstring_preview=1
 nnoremap <space> za
 
 " Nerd tree
-let NERDTreeIgnore=['\.pyc$', '\~$', '.DS_Store', '__pycache__'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', 'node_modules', 'lib', '.DS_Store', '__pycache__'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+
+"
+"
+" React configurations
+"
+"
+"
+
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 
 "
 "
 "
-" Pytho configurations
+" Python configurations
 "
 "
 "
@@ -123,6 +148,7 @@ let python_highlight_all=1
 "
 "
 "
+
 if has('gui_running')
   set background=dark
   colorscheme solarized
