@@ -82,6 +82,7 @@ nnoremap <space> za
 
 " Nerd tree
 let NERDTreeIgnore=['\.pyc$', 'node_modules', 'lib', '.DS_Store', '__pycache__'] "ignore files in NERDTree
+let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
 

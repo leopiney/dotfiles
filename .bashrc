@@ -12,11 +12,9 @@ export HISTSIZE=20000
 export HISTFILESIZE=20000
 export HISTCONTROL=ignoredups:erasedups
 
-# Configure prompt
-# export GIT_PS1_SHOWDIRTYSTATE=1
-# hname="$(hostname)"
-# export PS1='\[\033[01;31m\]\h \[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]\[\033[01;36m\]$(__git_ps1 " %s")\[\033[00m\]\[\033[01;31m\] > \[\033[00m\]'
-# source ~/.git-prompt.sh
+# FZF configurations
+export FZF_DEFAULT_COMMAND='ag -U --ignore={"*.pyc",".git","node_modules","__pycache__"} --hidden -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Vim default editor
 export EDITOR='vim'
