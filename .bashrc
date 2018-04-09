@@ -19,9 +19,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Vim default editor
 export EDITOR='vim'
 
-# Not sure what this is, maybe for man an the such?
-export VISUAL='vim'
-
 # Aliases
 alias mux="tmuxinator"
 alias l="ls -lsh"
@@ -30,20 +27,6 @@ alias comp="docker-compose"
 alias g="gitsh"
 alias cl="clear"
 alias sshgrok='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null leo@tcp://0.tcp.ngrok.io -p'
-
-# Add files in ~/bin to path
-PATH=$PATH:~/bin
-
-# Fixes the following problem with brew
-# https://github.com/Homebrew/homebrew-php/issues/4527#issuecomment-346483994
-PATH=$PATH:/usr/local/sbin
-
-title() {
-    echo -n -e "\033]0;"$*"\007"
-}
-
-# Highlight folders on ls
-LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
 
 # Load custom, per machine, options. Such as adding cuda libraries to path
 if [ -f ~/.bashrc_extra ]; then
