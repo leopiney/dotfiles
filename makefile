@@ -28,7 +28,7 @@ deploy:
 	cp ./.vimrc ~/.vimrc
 	cp ./.bashrc ~/.bashrc
 	cp ./.bash_profile ~/.bash_profile
-	cp -r ./.config ~/.config
+	rsync -r ./.config/ ~/.config/
 
 	#
 	# Install base python2 virtualenv to access the activate_this.py file
