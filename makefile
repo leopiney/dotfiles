@@ -15,6 +15,19 @@ install:
 	#
 	brew doctor
 
+install-android:
+	#
+	# Install Termux programs
+	#
+	pkg install	\
+		git	\
+		make	\
+		openssh	\
+		curl	\
+		rsync	\
+		python	\
+		perl
+
 deploy:
 	#
 	# Install/Update Vim Plug
@@ -35,3 +48,9 @@ deploy:
 	#
 	pip list --format=columns | grep -F virtualenv || pip install virtualenv
 	[ -d "$$HOME/.env-base" ] || virtualenv ~/.env-base
+
+	#
+	# Add git global configurations
+	#
+	git config --global user.email "leopiney@gmail.com"
+	git config --global user.name "Leonardo Piñeyro"

@@ -27,7 +27,8 @@ alias ll="ls -lsha"
 alias comp="docker-compose"
 alias g="gitsh"
 alias cl="clear"
-alias sshgrok='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null leo@tcp://0.tcp.ngrok.io -p'
+alias sshgrok='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null leo@0.tcp.ngrok.io -p'
+alias git-remove-merged-branches='git branch --merged | egrep -v "(^\*|master|dev|pro-reports)" | xargs git branch -d'
 
 # Load custom, per machine, options. Such as adding cuda libraries to path
 if [ -f ~/.bashrc_extra ]; then
