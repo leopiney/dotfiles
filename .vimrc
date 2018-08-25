@@ -36,6 +36,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Initialize plugin system
 call plug#end()
@@ -149,12 +150,14 @@ let python_highlight_all=1
 "
 "
 "
+set t_Co=256   " This is may or may not needed.
 
 if has('gui_running')
   set background=dark
-  colorscheme solarized
+  colorscheme PaperColor
 else
-  colorscheme zenburn
+  set background=light
+  colorscheme PaperColor
 endif
 
 " Switch between themes
