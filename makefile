@@ -41,6 +41,7 @@ deploy:
 	cp ./.vimrc ~/.vimrc
 	cp ./.bashrc ~/.bashrc
 	cp ./.bash_profile ~/.bash_profile
+	cp ./git-utils.py ~/git-utils.py
 	rsync -r ./.config/ ~/.config/
 
 	#
@@ -50,7 +51,13 @@ deploy:
 	[ -d "$$HOME/.env-base" ] || virtualenv ~/.env-base
 
 	#
+	# Install other pip utils
+	#
+	pip install fire sh
+
+	#
 	# Add git global configurations
 	#
+	git config --global alias.commit-to '!python ~/git-utils.py commit-to'
 	git config --global user.email "leopiney@gmail.com"
 	git config --global user.name "Leonardo Piñeyro"
