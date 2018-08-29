@@ -29,6 +29,9 @@ alias g="gitsh"
 alias cl="clear"
 alias sshgrok='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null leo@0.tcp.ngrok.io -p'
 
+# GHC configurations
+export PATH="$PATH:/Users/leo/Library/Haskell/bin/"
+
 # Load custom, per machine, options. Such as adding cuda libraries to path
 if [ -f ~/.bashrc_extra ]; then
   . ~/.bashrc_extra
