@@ -12,7 +12,7 @@ class GitUtils(object):
 
         git('commit', m=message)
         commit_hash = git('rev-parse', 'HEAD').strip()
-        print(u'📝 Successfully created commit with hash', commit_hash)
+        print(u'📝 Successfully created commit with hash "{}"'.format(commit_hash))
 
         modified_files = git('status', '-s', '-uno').strip()
 
@@ -24,30 +24,31 @@ class GitUtils(object):
             git('checkout', b=to_branch)
         else:
             git('checkout', to_branch)
-        print(u'🏃 Moved to branch', to_branch)
+        print(u'🏃 Moved to branch "{}"'.format(to_branch))
 
         git('cherry-pick', commit_hash)
-        print(u'🍒 Cherry-picked commit with hash', commit_hash)
+        print(u'🍒 Cherry-picked commit with hash "{}"'.format(commit_hash))
 
         if push:
             git('push')
-            print(u'🙌 Pushed', to_branch)
+            print(u'🙌 Pushed "{}"'.format(to_branch))
 
         git('checkout', current_branch)
-        print(u'🏃 Moved back to', current_branch)
+        print(u'🏃 Moved back to "{}"'.format(current_branch))
 
         if modified_files:
             git('stash', 'pop')
             print(u'👉 Put back unstashed changes')
 
         git('reset', '--hard', 'HEAD~1')
+        print(u'🗑  Removed new commit from "{}"'.format(current_branch))
 
         if (rebase):
             git('rebase', to_branch)
-            print(
-                u'🗑 Removed new commit from', current_branch,
-                'and rebased commits from', to_branch
-            )
+            print(u'🚜 Rebased commits from "{}" to the current branch "{}"'.format(
+                to_branch,
+                current_branch,
+            ))
 
         print(u'🦄 Finished without errors')
 
