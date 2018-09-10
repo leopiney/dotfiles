@@ -51,6 +51,11 @@ deploy:
 	[ -d "$$HOME/.env-base" ] || virtualenv ~/.env-base
 
 	#
+	# Install Vim plugins
+	#
+	vim +PlugInstall +qall
+
+	#
 	# Install other pip utils
 	#
 	pip install fire sh
@@ -61,4 +66,4 @@ deploy:
 	git config --global alias.commit-to '!python ~/git-utils.py commit-to'
 	git config --global alias.branch-remove-dangling '!git branch --merged | egrep -v "(^\*|master|dev|pro-reports)" | xargs git branch -d'
 	git config --global user.email "leopiney@gmail.com"
-	git config --global user.name "Leonardo Piñeyro"
+	git config --global user.name "Leonardo PiÃ±eyro"
