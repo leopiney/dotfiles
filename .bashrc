@@ -17,6 +17,10 @@ export FZF_IGNORED="*.pyc,.git,.DS_store,.env,node_modules,__pycache__,.ipynb_ch
 export FZF_DEFAULT_COMMAND='ag -U --ignore={'$FZF_IGNORED'} --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# PIPENV
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Vim default editor
 export EDITOR='vim'
 
@@ -28,9 +32,6 @@ alias comp="docker-compose"
 alias g="gitsh"
 alias cl="clear"
 alias sshgrok='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null leo@0.tcp.ngrok.io -p'
-
-# GHC configurations
-export PATH="$PATH:/Users/leo/Library/Haskell/bin/"
 
 # Load custom, per machine, options. Such as adding cuda libraries to path
 if [ -f ~/.bashrc_extra ]; then
