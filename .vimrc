@@ -11,11 +11,9 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 " Utils
-Plug 'skywind3000/asyncrun.vim'
 Plug 'tmhedberg/simpylfold'
 Plug 'scrooloose/nerdtree'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'shougo/vimshell.vim'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -30,6 +28,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 Plug 'mattn/emmet-vim'
+
+" Haskell and Idris
+Plug 'idris-hackers/idris-vim'
 
 " Themes & Customization
 Plug 'vim-airline/vim-airline'
