@@ -18,6 +18,8 @@ Plug 'shougo/vimshell.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'w0rp/ale'
+
 " Python
 Plug 'skywind3000/asyncrun.vim'
 Plug 'nvie/vim-flake8'
@@ -26,11 +28,12 @@ Plug 'davidhalter/jedi-vim'
 " React
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-
 Plug 'mattn/emmet-vim'
-Plug 'w0rp/ale'
 
 " Haskell and Idris
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'shougo/vimproc.vim'
 Plug 'idris-hackers/idris-vim'
 
 " Themes & Customization

@@ -15,6 +15,13 @@ install:
 	#
 	brew doctor
 
+	#
+	# Install Haskell stuff
+	#
+	brew install haskell-platform
+
+	stack install hlint ghc-mod hpack
+
 install-android:
 	#
 	# Install Termux programs
@@ -54,6 +61,7 @@ deploy:
 	# Install Vim plugins
 	#
 	vim +PlugInstall +qall
+	make -C /Users/leo/.vim/plugged/vimproc.vim
 
 	#
 	# Install other pip utils
