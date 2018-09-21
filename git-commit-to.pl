@@ -1,6 +1,8 @@
 use Getopt::Long;
 use Pod::Usage;
 
+sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
+
 #
 # Adds options to help command
 #
@@ -9,10 +11,9 @@ my $help = 0;
 GetOptions('help|?' => \$help) or pod2usage(2);
 pod2usage(1) if $help;
 
-sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
-
-my %args;
-
+#
+# Parse arguments
+#
 my $target_branch;
 my $message;
 my $push;
@@ -121,7 +122,7 @@ git-commit-to branch message [options]
 
   Options:
     --help            Displays this message
-    --t[arget-branch]     Target branch.
+    --t[arget-branch] Target branch.
     --m[essage]       The commit message.
     --p[push]         After adding the commit to the target branch, it rebases the branch and pushes.
     --n[ew-branch]    The target branch is a new branch.
