@@ -25,12 +25,13 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 # Aliases
-alias mux="tmuxinator"
-alias l="ls -lsh"
-alias ll="ls -lsha"
+alias batt="pmset -g batt"
+alias cl="clear"
 alias comp="docker-compose"
 alias g="gitsh"
-alias cl="clear"
+alias l="ls -lsh"
+alias ll="ls -lsha"
+alias mux="tmuxinator"
 alias sshgrok='ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null leo@0.tcp.ngrok.io -p'
 
 # Load custom, per machine, options. Such as adding cuda libraries to path
