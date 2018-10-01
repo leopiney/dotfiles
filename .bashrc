@@ -17,6 +17,9 @@ export FZF_IGNORED="*.pyc,.git,.DS_store,.env,node_modules,__pycache__,.ipynb_ch
 export FZF_DEFAULT_COMMAND='ag -U --ignore={'$FZF_IGNORED'} --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# Complete stuff
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
+
 # PIPENV
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

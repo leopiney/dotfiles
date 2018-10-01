@@ -6,10 +6,10 @@ sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
 #
 # Adds options to help command
 #
-my $help = 0;
+# my $help = 0;
 
-GetOptions('help|?' => \$help) or pod2usage(2);
-pod2usage(1) if $help;
+# GetOptions('help|?' => \$help) or pod2usage(2);
+# pod2usage(1) if $help;
 
 #
 # Parse arguments
@@ -111,22 +111,22 @@ if ($rebase) {
 
 print "🦄 Finished without errors\n"
 
-__END__
-=head1 NAME
-
-git-commit-to - Commit from your branch to another one with ease
-
-=head1 SYNOPSIS
-
-git-commit-to branch message [options]
-
-  Options:
-    --help            Displays this message
-    --t[arget-branch] Target branch.
-    --m[essage]       The commit message.
-    --p[push]         After adding the commit to the target branch, it rebases the branch and pushes.
-    --n[ew-branch]    The target branch is a new branch.
-    --r[ebase]        Performs a rebase from the target branch to the current branch after the commit is added.
-
-
-=cut
+# __END__
+# =head1 NAME
+#
+# git-commit-to - Commit from your branch to another one with ease
+#
+# =head1 SYNOPSIS
+#
+# git-commit-to branch message [options]
+#
+#   Options:
+#     --help           Displays this message
+#     --target-branch  Target branch.
+#     --message        The commit message.
+#     --push           After adding the commit to the target branch, it rebases the branch and pushes.
+#     --new-branch     The target branch is a new branch.
+#     --rebase         Performs a rebase from the target branch to the current branch after the commit is added.
+#
+#
+# =cut
