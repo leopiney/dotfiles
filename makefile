@@ -45,10 +45,13 @@ deploy:
 	# 
 	# Copy dot files
 	#
-	cp ./.vimrc ~/.vimrc
-	cp ./.bashrc ~/.bashrc
-	cp ./.bash_profile ~/.bash_profile
-	cp ./git-commit-to.pl ~/git-commit-to.pl
+	cp ./.vimrc ~
+	cp ./.bashrc ~
+	cp ./.ghci ~
+	cp ./.bash_profile ~
+	cp ./git-commit-to.pl ~
+
+	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
 
 	#
@@ -72,6 +75,6 @@ deploy:
 	# Add git global configurations
 	#
 	git config --global alias.commit-to '!perl ~/git-commit-to.pl'
-	git config --global alias.branch-remove-dangling '!git branch --merged | egrep -v "(^\*|master|dev|pro-reports)" | xargs git branch -d'
+	git config --global alias.branch-remove-dangling '!git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 	git config --global user.email "leopiney@gmail.com"
 	git config --global user.name "Leonardo Piñeyro"
