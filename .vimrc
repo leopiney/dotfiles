@@ -172,13 +172,13 @@ let python_highlight_all=1
 "
 set t_Co=256   " This is may or may not needed.
 
-if has('gui_running')
-  set background=dark
-  colorscheme PaperColor
-else
-  set background=light
-  colorscheme PaperColor
-endif
+" if has('gui_running')
+"   set background=dark
+"   colorscheme PaperColor
+" else
+"   set background=light
+"   colorscheme PaperColor
+" endif
 
 " Switch between themes
 call togglebg#map("<F5>")
