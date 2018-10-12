@@ -1,0 +1,10 @@
+windows:
+  - name: idris-workspace
+    root: ~/Documents/tensor-safe
+    layout: main-vertical
+    panes:
+      - vim
+      - commands:
+        - cd ~/Documents/tensorflow-haskell
+        - stack ghci
+      - idris

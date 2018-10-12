@@ -1,12 +1,22 @@
+install-deps:
+	#
+	# Install brew dependencies
+	#
+	for dep in desk vim fzf python gitsh watchman ; do \
+		brew info $$dep || brew install $$dep || brew upgrade $$dep ; \
+	done
+
+	gem install teamocil
+	mkdir -p ~/.teamocil
+
 install:
 	#
 	# Install Brew
 	#
-	brew --version || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew --version || /usr/bin/ruby -e \
+		"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	for dep in vim fzf python gitsh watchman ; do \
-		brew info $$dep || brew install $$dep || brew upgrade $$dep ; \
-	done
+	$(MAKE) install-deps
 
 	brew install python@2
 
@@ -15,6 +25,7 @@ install:
 	#
 	brew doctor
 
+install-haskell:
 	#
 	# Install Haskell stuff
 	#
@@ -53,6 +64,9 @@ deploy:
 
 	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
+
+	mkdir -p ~/.teamocil
+	rsync -r ./.teamocil/ ~/.teamocil/
 
 	#
 	# Install base python2 virtualenv to access the activate_this.py file
