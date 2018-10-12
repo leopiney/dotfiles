@@ -13,7 +13,7 @@ export HISTFILESIZE=20000
 export HISTCONTROL=ignoredups:erasedups
 
 # FZF configurations
-export FZF_IGNORED="*.pyc,.git,.DS_store,.env,node_modules,__pycache__,.ipynb_checkpoints,.serverless,.next,.ibc,.idr~,.swp"
+export FZF_IGNORED="*.pyc,.git,.DS_store,.env,node_modules,__pycache__,.ipynb_checkpoints,.serverless,.next,*.ibc,*.idr~,*.swp"
 export FZF_DEFAULT_COMMAND='ag -U --ignore={'$FZF_IGNORED'} --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
