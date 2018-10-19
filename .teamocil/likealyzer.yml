@@ -1,0 +1,11 @@
+windows:
+  - name: likealyzer-workspace
+    root: ~/Documents/likealyzer-v2
+    layout: main-vertical
+    panes:
+      - gitsh
+      - make dev-likealyzer
+      - make dev-analyzer
+      - commands:
+        - cd ~/Documents/likealyzer-v2/likealyzer-web-react
+        - yarn build && yarn start

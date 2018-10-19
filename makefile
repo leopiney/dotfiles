@@ -61,6 +61,7 @@ deploy:
 	cp ./.ghci ~
 	cp ./.bash_profile ~
 	cp ./git-commit-to.pl ~
+	cp ./.tmux.conf ~
 
 	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
