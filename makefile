@@ -90,5 +90,6 @@ deploy:
 	#
 	git config --global alias.commit-to '!perl ~/git-commit-to.pl'
 	git config --global alias.branch-remove-dangling '!git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+	git config --global alias.alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
 	git config --global user.email "leopiney@gmail.com"
 	git config --global user.name "Leonardo Piñeyro"
