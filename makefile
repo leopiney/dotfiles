@@ -69,6 +69,9 @@ deploy:
 	mkdir -p ~/.teamocil
 	rsync -r ./.teamocil/ ~/.teamocil/
 
+	mkdir -p ~/.stack
+	rsync -r ./.stack/ ~/.stack/
+
 	#
 	# Install base python2 virtualenv to access the activate_this.py file
 	#
