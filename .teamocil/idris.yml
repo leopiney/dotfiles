@@ -4,7 +4,7 @@ windows:
     layout: main-vertical
     panes:
       - vim
-      - commands:
-        - cd ~/Documents/tensorflow-haskell
-        - stack ghci
+#     - commands:
+#       - cd ~/Documents/tensorflow-haskell
+#       - stack ghci
       - idris

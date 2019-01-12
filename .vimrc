@@ -88,7 +88,7 @@ nnoremap <space> za
 
 " Nerd tree
 " ignore files in NERD tree
-let NERDTreeIgnore=['.git', '\.pyc$', 'node_modules', 'lib', '.DS_Store', '__pycache__', '\.ibc$', '\.swp$', '\.idr\~$'] 
+let NERDTreeIgnore=['.git', '\.pyc$', 'node_modules', 'lib', '.DS_Store', '__pycache__', '\.ibc$', '\.swp$', '\.idr\~$', '\.jpg$', '\.png$']
 let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
