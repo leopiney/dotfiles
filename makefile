@@ -92,8 +92,8 @@ deploy:
 	#
 	# Install VScode extensions
 	#
-	cp ./vscode-settings.conf Library/Application\ Support/Code/User/settings.json
-	cat vscode-extensions.txt | xargs -L 1 code --install-extension
+	cp ./vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
+	cat ./vscode-extensions.txt | xargs -L 1 code --install-extension
 
 	#
 	# Add git global configurations
