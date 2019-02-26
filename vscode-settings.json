@@ -1,0 +1,38 @@
+{
+  "atomKeymap.promptV3Features": true,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderIndentGuides": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [100],
+  "editor.wordWrapColumn": 100,
+  "flow.useNPMPackagedFlow": true,
+  "haskell.ghcMod.check": "onSave",
+  "haskell.ghcMod.logLevel": "log",
+  "haskero.debugMode": true,
+  "hoogle-vscode.verbose": true,
+  "javascript.validate.enable": false,
+  "jupyter.notebook.startupFolder": "${workspaceRoot}/",
+  "prettier.eslintIntegration": true,
+  "python.disableInstallationCheck": true,
+  "python.formatting.blackArgs": ["--line-length", "100"],
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.terminal.activateEnvironment": false,
+  "window.zoomLevel": -1,
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Material Theme Palenight",
+  "workbench.iconTheme": "material-icon-theme",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/lib": true,
+    "**/.history": true
+  }
+}
+

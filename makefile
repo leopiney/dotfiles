@@ -90,6 +90,12 @@ deploy:
 	pip install fire sh
 
 	#
+	# Install VScode extensions
+	#
+	cp ./vscode-settings.conf Library/Application\ Support/Code/User/settings.json
+	cat vscode-extensions.txt | xargs -L 1 code --install-extension
+
+	#
 	# Add git global configurations
 	#
 	git config --global alias.commit-to '!perl ~/git-commit-to.pl'
