@@ -1,7 +1,6 @@
 amatiasq.sort-imports
 attilabuti.vscode-mjml
 dbaeumer.vscode-eslint
-donjayamanne.jupyter
 equinusocio.vsc-material-theme
 esbenp.prettier-vscode
 flowtype.flow-for-vscode
