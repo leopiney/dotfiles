@@ -62,6 +62,8 @@ deploy:
 	cp ./.bash_profile ~
 	cp ./git-commit-to.pl ~
 	cp ./.tmux.conf ~
+	cp ./imgcat ~/.local/bin
+	chmod 554 ~/.local/bin/imgcat
 
 	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
@@ -90,12 +92,6 @@ deploy:
 	pip install fire sh
 
 	#
-	# Install VScode extensions
-	#
-	cp ./vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
-	cat ./vscode-extensions.txt | xargs -L 1 code --install-extension
-
-	#
 	# Add git global configurations
 	#
 	git config --global alias.commit-to '!perl ~/git-commit-to.pl'
@@ -103,3 +99,11 @@ deploy:
 	git config --global alias.alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
 	git config --global user.email "leopiney@gmail.com"
 	git config --global user.name "Leonardo Piñeyro"
+
+vscode:
+	#
+	# Install VScode extensions
+	#
+	cp ./vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
+	cat ./vscode-extensions.txt | xargs -L 1 code --install-extension
+
