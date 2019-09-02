@@ -140,13 +140,13 @@ let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
 " python with virtualenv support
-py3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  activate_this = os.environ['VIRTUAL_ENV_BASE_ACTIVATE_THIS']
-  exec(open(activate_this).read(), dict(__file__=activate_this))
-EOF
+" py3 << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"   activate_this = os.environ['VIRTUAL_ENV_BASE_ACTIVATE_THIS']
+"   exec(open(activate_this).read(), dict(__file__=activate_this))
+" EOF
 
 " PEP8 indentation specifications
 au BufNewFile,BufRead *.py
