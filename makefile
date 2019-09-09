@@ -82,7 +82,7 @@ deploy:
 	# Install Vim plugins
 	#
 	vim +PlugInstall +qall
-	make -C /Users/leo/.vim/plugged/vimproc.vim
+	make -C ~/.vim/plugged/vimproc.vim
 
 	#
 	# Install other pip utils
