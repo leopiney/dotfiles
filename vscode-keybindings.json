@@ -1,0 +1,37 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+enter",
+    "command": "python.datascience.runcurrentcell",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection"
+  },
+  {
+    "key": "cmd+k 0",
+    "command": "python.datascience.restartkernel",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+  },
+  {
+    "key": "cmd+k i",
+    "command": "python.datascience.interruptkernel",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+  },
+  {
+    "key": "cmd+k k",
+    "command": "python.datascience.removeallcells",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+  },
+  {
+    "key": "cmd+k a",
+    "command": "python.datascience.addcellbelow",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+  },
+  {
+    "key": "cmd+k d",
+    "command": "python.datascience.debugcell",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.view.extension.test"
+  }
+]

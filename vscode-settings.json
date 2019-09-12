@@ -1,5 +1,9 @@
 {
+  // Keymaps
   "atomKeymap.promptV3Features": true,
+  //
+  // Editor settings
+  //
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
@@ -10,29 +14,61 @@
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [100],
   "editor.wordWrapColumn": 100,
-  "flow.useNPMPackagedFlow": true,
+  //
+  // Haskell
+  //
   "haskell.ghcMod.check": "onSave",
   "haskell.ghcMod.logLevel": "log",
   "haskero.debugMode": true,
   "hoogle-vscode.verbose": true,
+  //
+  // Mac only
+  //
+  "nasc-touchbar.showCommands": false,
+  "nasc-touchbar.showReferences": true,
+  //
+  // JavaScript
+  //
+  "flow.useNPMPackagedFlow": true,
   "javascript.validate.enable": false,
-  "jupyter.notebook.startupFolder": "${workspaceRoot}/",
-  "prettier.eslintIntegration": true,
+  //
+  // Python configuration
+  //
+  "python.dataScience.allowInput": false,
+  "python.dataScience.askForKernelRestart": false,
+  "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.disableInstallationCheck": true,
+  "python.formatting.autopep8Args": ["--max-line-length=100"],
   "python.formatting.blackArgs": ["--line-length", "100"],
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "python.terminal.activateEnvironment": false,
-  "window.zoomLevel": -1,
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Material Theme Palenight",
-  "workbench.iconTheme": "material-icon-theme",
+  "python.testing.pytestEnabled": true,
+  //
+  // Workbench settings
+  //
+  "debug.internalConsoleOptions": "neverOpen",
+  "debug.openDebug": "openOnDebugBreak",
+  "debug.toolBarLocation": "hidden",
+  "explorer.confirmDragAndDrop": false,
+  "search.globalFindClipboard": true,
+  "search.useGlobalIgnoreFiles": true,
+  "window.zoomLevel": 0,
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Solarized Light",
+  "zenMode.fullScreen": false,
   "search.exclude": {
-    "**/node_modules": true,
+    ".env": true,
+    ".history": true,
+    ".pytest_cache": true,
     "**/bower_components": true,
     "**/lib": true,
-    "**/.history": true
+    "**/node_modules": true
+  },
+  "files.exclude": {
+    ".env/*": true,
+    ".history/*": true,
+    ".pytest_cache/*": true
   }
 }
-

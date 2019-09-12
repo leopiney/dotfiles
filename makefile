@@ -103,6 +103,7 @@ vscode:
 	#
 	# Install VScode extensions
 	#
-	cp ./vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
+	cp ./vscode-settings.json "~/Library/Application Support/Code/User/settings.json"
+	cp ./vscode-keybindings.json "~/Library/Application Support/Code/User/keybindings.json"
 	cat ./vscode-extensions.txt | xargs -L 1 code --install-extension
 
