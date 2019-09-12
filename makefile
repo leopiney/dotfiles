@@ -6,8 +6,8 @@ install-deps:
 		brew info $$dep || brew install $$dep || brew upgrade $$dep ; \
 	done
 
-	gem install teamocil
-	mkdir -p ~/.teamocil
+	# gem install teamocil
+	# mkdir -p ~/.teamocil
 
 install:
 	#
@@ -61,13 +61,13 @@ deploy:
 	cp ./.ghci ~
 	cp ./.bash_profile ~
 	cp ./git-commit-to.pl ~
-	cp ./.tmux.conf ~
+	# cp ./.tmux.conf ~
 
 	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
 
-	mkdir -p ~/.teamocil
-	rsync -r ./.teamocil/ ~/.teamocil/
+	# mkdir -p ~/.teamocil
+	# rsync -r ./.teamocil/ ~/.teamocil/
 
 	mkdir -p ~/.stack
 	rsync -r ./.stack/ ~/.stack/
@@ -82,7 +82,7 @@ deploy:
 	# Install Vim plugins
 	#
 	vim +PlugInstall +qall
-	make -C ~/.vim/plugged/vimproc.vim
+	make -C ~/.vim/plugged/vimproc.vim || echo "Could not make vimproc"
 
 	#
 	# Install other pip utils
