@@ -2,6 +2,12 @@
   // Keymaps
   "atomKeymap.promptV3Features": true,
   //
+  // Debug
+  //
+  "debug.internalConsoleOptions": "neverOpen",
+  "debug.openDebug": "openOnDebugBreak",
+  // "debug.toolBarLocation": "hidden",
+  //
   // Editor settings
   //
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
@@ -11,9 +17,15 @@
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderIndentGuides": false,
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "none",
   "editor.rulers": [100],
   "editor.wordWrapColumn": 100,
+  "explorer.confirmDragAndDrop": false,
+  "search.globalFindClipboard": true,
+  "search.useGlobalIgnoreFiles": true,
+  "window.zoomLevel": -1,
+  "workbench.activityBar.visible": true,
+  "zenMode.fullScreen": false,
   //
   // Haskell
   //
@@ -22,15 +34,25 @@
   "haskero.debugMode": true,
   "hoogle-vscode.verbose": true,
   //
-  // Mac only
+  // Idris
   //
-  "nasc-touchbar.showCommands": false,
-  "nasc-touchbar.showReferences": true,
+  "idris.executablePath": "idris",
+  "idris.hoverMode": "fallback",
+  "idris.numbersOfContinuousTypechecking": 10,
+  "idris.showOutputWhenTypechecking": true,
+  "idris.suggestMode": "replCompletion",
+  "idris.warnPartial": true,
   //
   // JavaScript
   //
   "flow.useNPMPackagedFlow": true,
   "javascript.validate.enable": false,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   //
   // Python configuration
   //
@@ -38,26 +60,19 @@
   "python.dataScience.askForKernelRestart": false,
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.disableInstallationCheck": true,
+  "python.dataScience.addGotoCodeLenses": false,
+  "editor.parameterHints.enabled": false,
   "python.formatting.autopep8Args": ["--max-line-length=100"],
   "python.formatting.blackArgs": ["--line-length", "100"],
+  "python.sortImports.args": ["-rc", "-sp isort.cfg"],
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.terminal.activateEnvironment": false,
   "python.testing.pytestEnabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.dataScience.useNotebookEditor": false,
   //
   // Workbench settings
   //
-  "debug.internalConsoleOptions": "neverOpen",
-  "debug.openDebug": "openOnDebugBreak",
-  "debug.toolBarLocation": "hidden",
-  "explorer.confirmDragAndDrop": false,
-  "search.globalFindClipboard": true,
-  "search.useGlobalIgnoreFiles": true,
-  "window.zoomLevel": 0,
-  "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Solarized Light",
-  "zenMode.fullScreen": false,
   "search.exclude": {
     ".env": true,
     ".history": true,
@@ -72,3 +87,4 @@
     ".pytest_cache/*": true
   }
 }
+

@@ -2,12 +2,11 @@ install-deps:
 	#
 	# Install brew dependencies
 	#
-	for dep in desk vim fzf python gitsh watchman ; do \
+	brew tap thoughtbot/formulae
+	for dep in desk vim fzf python gitsh watchman tmux ; do \
 		brew info $$dep || brew install $$dep || brew upgrade $$dep ; \
 	done
 
-	# gem install teamocil
-	# mkdir -p ~/.teamocil
 
 install:
 	#
@@ -17,8 +16,6 @@ install:
 		"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 	$(MAKE) install-deps
-
-	brew install python@2
 
 	#
 	# Check Brew installation
@@ -32,6 +29,11 @@ install-haskell:
 	brew install haskell-platform
 
 	stack install hlint ghc-mod hpack
+	cp ./.ghci ~
+
+	mkdir -p ~/.stack
+	rsync -r ./.stack/ ~/.stack/
+
 
 install-android:
 	#
@@ -56,38 +58,25 @@ deploy:
 	# 
 	# Copy dot files
 	#
-	cp ./.vimrc ~
+	# cp ./.vimrc ~
 	cp ./.bashrc ~
-	cp ./.ghci ~
 	cp ./.bash_profile ~
 	cp ./git-commit-to.pl ~
-	# cp ./.tmux.conf ~
+	cp ./.tmux.conf ~
 
 	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
 
-	# mkdir -p ~/.teamocil
-	# rsync -r ./.teamocil/ ~/.teamocil/
-
-	mkdir -p ~/.stack
-	rsync -r ./.stack/ ~/.stack/
-
-	#
-	# Install base python2 virtualenv to access the activate_this.py file
-	#
-	pip list --format=columns | grep -F virtualenv || pip install virtualenv
-	[ -d "$$HOME/.env-base" ] || virtualenv ~/.env-base
-
 	#
 	# Install Vim plugins
 	#
-	vim +PlugInstall +qall
-	make -C ~/.vim/plugged/vimproc.vim || echo "Could not make vimproc"
+	# vim +PlugInstall +qall
+	# make -C ~/.vim/plugged/vimproc.vim || echo "Could not make vimproc"
 
 	#
 	# Install other pip utils
 	#
-	pip install fire sh
+	# pip install fire sh
 
 	#
 	# Add git global configurations

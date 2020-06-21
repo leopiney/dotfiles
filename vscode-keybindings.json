@@ -1,4 +1,4 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaults
 [
   {
     "key": "ctrl+enter",
@@ -33,5 +33,15 @@
   {
     "key": "ctrl+shift+t",
     "command": "workbench.view.extension.test"
+  },
+  {
+    "key": "cmd+k k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+k k",
+    "command": "workbench.debug.panel.action.clearReplAction",
+    "when": "inDebugRepl && textInputFocus"
   }
 ]
