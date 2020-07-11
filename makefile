@@ -3,9 +3,15 @@ install-deps:
 	# Install brew dependencies
 	#
 	brew tap thoughtbot/formulae
-	for dep in desk vim fzf python gitsh watchman tmux ; do \
+	for dep in desk vim fzf python gitsh watchman tmux  pyenv; do \
 		brew info $$dep || brew install $$dep || brew upgrade $$dep ; \
 	done
+
+install-apps:
+	#
+	# Install macOS apps
+	#
+	brew cask install visual-studio-code spectacle
 
 
 install:
@@ -48,6 +54,26 @@ install-android:
 		python	\
 		perl
 
+
+vim:
+	cp ./.vimrc ~
+
+	#
+	# Install Vim plugins
+	#
+	vim +PlugInstall +qall
+	make -C ~/.vim/plugged/vimproc.vim || echo "Could not make vimproc"
+
+
+vscode:
+	#
+	# Install VScode extensions
+	#
+	cp ./vscode-settings.json "~/Library/Application Support/Code/User/settings.json"
+	cp ./vscode-keybindings.json "~/Library/Application Support/Code/User/keybindings.json"
+	cat ./vscode-extensions.txt | xargs -L 1 code --install-extension
+
+
 deploy:
 	#
 	# Install/Update Vim Plug
@@ -58,7 +84,6 @@ deploy:
 	# 
 	# Copy dot files
 	#
-	# cp ./.vimrc ~
 	cp ./.bashrc ~
 	cp ./.bash_profile ~
 	cp ./git-commit-to.pl ~
@@ -66,17 +91,6 @@ deploy:
 
 	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
-
-	#
-	# Install Vim plugins
-	#
-	# vim +PlugInstall +qall
-	# make -C ~/.vim/plugged/vimproc.vim || echo "Could not make vimproc"
-
-	#
-	# Install other pip utils
-	#
-	# pip install fire sh
 
 	#
 	# Add git global configurations
@@ -87,12 +101,3 @@ deploy:
 	git config --global user.email "leopiney@gmail.com"
 	git config --global user.name "Leonardo Piñeyro"
 	git config --global push.default current
-
-vscode:
-	#
-	# Install VScode extensions
-	#
-	cp ./vscode-settings.json "~/Library/Application Support/Code/User/settings.json"
-	cp ./vscode-keybindings.json "~/Library/Application Support/Code/User/keybindings.json"
-	cat ./vscode-extensions.txt | xargs -L 1 code --install-extension
-
