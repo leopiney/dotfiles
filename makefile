@@ -3,23 +3,23 @@ install-deps:
 	# Install brew dependencies
 	#
 	brew tap thoughtbot/formulae
-	for dep in desk vim fzf python gitsh watchman tmux  pyenv; do \
-		brew info $$dep || brew install $$dep || brew upgrade $$dep ; \
+
+	for dep in desk vim fzf python gitsh watchman tmux  pyenv ; do \
+		brew install $$dep || brew upgrade $$dep ; \
 	done
 
 install-apps:
 	#
 	# Install macOS apps
 	#
-	brew cask install visual-studio-code spectacle
+	brew cask install hyper visual-studio-code spectacle
 
 
 install:
 	#
 	# Install Brew
 	#
-	brew --version || /usr/bin/ruby -e \
-		"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew --version || echo "Please install Homebrew: https://brew.sh/" && exit
 
 	$(MAKE) install-deps
 
@@ -56,11 +56,16 @@ install-android:
 
 
 vim:
-	cp ./.vimrc ~
+	#
+	# Install/Update Vim Plug
+	#
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 	#
 	# Install Vim plugins
 	#
+	cp ./.vimrc ~
 	vim +PlugInstall +qall
 	make -C ~/.vim/plugged/vimproc.vim || echo "Could not make vimproc"
 
@@ -76,18 +81,19 @@ vscode:
 
 deploy:
 	#
-	# Install/Update Vim Plug
+	# Set default hostnames
 	#
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	$(shell bash -c 'scutil --set ComputerName "lp-macbook"')
+	$(shell bash -c 'scutil --set HostName "lp-macbook"')
 
-	# 
+	#
 	# Copy dot files
 	#
 	cp ./.bashrc ~
 	cp ./.bash_profile ~
 	cp ./git-commit-to.pl ~
 	cp ./.tmux.conf ~
+	cp ./.hyper.js ~
 
 	mkdir -p ~/.config
 	rsync -r ./.config/ ~/.config/
