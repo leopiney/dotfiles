@@ -4,15 +4,18 @@ install-deps:
 	#
 	brew tap thoughtbot/formulae
 
-	for dep in desk vim fzf python gitsh watchman tmux  pyenv ; do \
+	for dep in desk vim fzf python pyenv gitsh watchman tmux ; do \
 		brew install $$dep || brew upgrade $$dep ; \
 	done
+
+	brew tap homebrew/cask-fonts
+	brew cask install font-fira-code
 
 install-apps:
 	#
 	# Install macOS apps
 	#
-	brew cask install hyper visual-studio-code spectacle
+	brew cask install hyper visual-studio-code spectacle slack spark
 
 
 install:
@@ -74,6 +77,8 @@ vscode:
 	#
 	# Install VScode extensions
 	#
+	mkdir -p ~/Library/Application Support/Code/User/
+
 	cp ./vscode-settings.json "~/Library/Application Support/Code/User/settings.json"
 	cp ./vscode-keybindings.json "~/Library/Application Support/Code/User/keybindings.json"
 	cat ./vscode-extensions.txt | xargs -L 1 code --install-extension
@@ -91,7 +96,7 @@ deploy:
 	#
 	cp ./.bashrc ~
 	cp ./.bash_profile ~
-	cp ./git-commit-to.pl ~
+	cp ./git-commit-to.pl ~/.git-commit-to.pl
 	cp ./.tmux.conf ~
 	cp ./.hyper.js ~
 
@@ -101,7 +106,7 @@ deploy:
 	#
 	# Add git global configurations
 	#
-	git config --global alias.commit-to '!perl ~/git-commit-to.pl'
+	git config --global alias.commit-to '!perl ~/.git-commit-to.pl'
 	git config --global alias.branch-remove-dangling '!git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 	git config --global alias.alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
 	git config --global user.email "leopiney@gmail.com"

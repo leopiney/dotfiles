@@ -6,7 +6,6 @@
   //
   "debug.internalConsoleOptions": "neverOpen",
   "debug.openDebug": "openOnDebugBreak",
-  // "debug.toolBarLocation": "hidden",
   //
   // Editor settings
   //
@@ -18,34 +17,22 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderIndentGuides": false,
   "editor.renderWhitespace": "none",
-  "editor.rulers": [100],
+  "workbench.editor.showIcons": false,
+  "explorer.openEditors.visible": 0,
+  "editor.folding": false,
+  "editor.rulers": [
+    100
+  ],
   "editor.wordWrapColumn": 100,
   "explorer.confirmDragAndDrop": false,
   "search.globalFindClipboard": true,
   "search.useGlobalIgnoreFiles": true,
   "window.zoomLevel": -1,
-  "workbench.activityBar.visible": true,
+  "workbench.activityBar.visible": false,
   "zenMode.fullScreen": false,
-  //
-  // Haskell
-  //
-  "haskell.ghcMod.check": "onSave",
-  "haskell.ghcMod.logLevel": "log",
-  "haskero.debugMode": true,
-  "hoogle-vscode.verbose": true,
-  //
-  // Idris
-  //
-  "idris.executablePath": "idris",
-  "idris.hoverMode": "fallback",
-  "idris.numbersOfContinuousTypechecking": 10,
-  "idris.showOutputWhenTypechecking": true,
-  "idris.suggestMode": "replCompletion",
-  "idris.warnPartial": true,
   //
   // JavaScript
   //
-  "flow.useNPMPackagedFlow": true,
   "javascript.validate.enable": false,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -62,19 +49,29 @@
   "python.disableInstallationCheck": true,
   "python.dataScience.addGotoCodeLenses": false,
   "editor.parameterHints.enabled": false,
-  "python.formatting.autopep8Args": ["--max-line-length=100"],
-  "python.formatting.blackArgs": ["--line-length", "100"],
-  "python.sortImports.args": ["-rc", "-sp isort.cfg"],
+  "python.formatting.autopep8Args": [
+    "--max-line-length=100"
+  ],
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "100"
+  ],
+  "python.sortImports.args": [
+    "-rc",
+    "-sp isort.cfg"
+  ],
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.testing.pytestEnabled": true,
   "python.linting.pylintEnabled": false,
   "python.dataScience.useNotebookEditor": false,
+  "python.languageServer": "Pylance",
   //
   // Workbench settings
   //
   "search.exclude": {
     ".env": true,
+    ".venv": true,
     ".history": true,
     ".pytest_cache": true,
     "**/bower_components": true,
@@ -83,8 +80,8 @@
   },
   "files.exclude": {
     ".env/*": true,
+    ".venv/*": true,
     ".history/*": true,
     ".pytest_cache/*": true
   }
 }
-
