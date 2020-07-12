@@ -4,19 +4,16 @@ install-deps:
 	#
 	brew tap thoughtbot/formulae
 
-	for dep in desk vim fzf python pyenv gitsh watchman tmux ; do \
+	for dep in desk vim ag fzf python pyenv gitsh watchman tmux ; do \
 		brew install $$dep || brew upgrade $$dep ; \
 	done
-
-	brew tap homebrew/cask-fonts
-	brew cask install font-fira-code
 
 install-apps:
 	#
 	# Install macOS apps
 	#
-	brew cask install hyper visual-studio-code spectacle slack spark
-
+	brew tap homebrew/cask-fonts
+	brew cask install font-fira-code hyper visual-studio-code spectacle slack telegram
 
 install:
 	#
@@ -97,6 +94,7 @@ deploy:
 	cp ./.bashrc ~
 	cp ./.bash_profile ~
 	cp ./git-commit-to.pl ~/.git-commit-to.pl
+	cp ./.fzf.bash ~
 	cp ./.tmux.conf ~
 	cp ./.hyper.js ~
 
