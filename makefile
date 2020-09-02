@@ -67,7 +67,6 @@ vim:
 	#
 	cp ./.vimrc ~
 	vim +PlugInstall +qall
-	make -C ~/.vim/plugged/vimproc.vim || echo "Could not make vimproc"
 
 
 vscode:
